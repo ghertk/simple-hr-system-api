@@ -30,7 +30,7 @@ class ColaboradorController extends Controller
                 "nome_pai" => ["required"],
                 "nome_mae" => ["required"],
                 "cpf" => ["required", "min:11", "max:14", Rule::unique(Colaborador::class, "cpf")],
-                "data_nascimento" => ["required", Rule::date()->format("d/m/Y")],
+                "data_nascimento" => ["required", Rule::date()],
                 "cargo" => ["required"],
             ]);
 
@@ -72,8 +72,8 @@ class ColaboradorController extends Controller
                 "apelido" => ["required"],
                 "nome_pai" => ["required"],
                 "nome_mae" => ["required"],
-                "cpf" => ["required", "min:11", "max:14", Rule::unique(Colaborador::class, "cpf")],
-                "data_nascimento" => ["required", Rule::date()->format("d/m/Y")],
+                "cpf" => ["required", "min:11", "max:14"/* , Rule::unique(Colaborador::class, "cpf") */],
+                "data_nascimento" => ["required", Rule::date()],
                 "cargo" => ["required"],
             ]);
 
